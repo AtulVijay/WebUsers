@@ -1,0 +1,47 @@
+User Details
+	PK
+	UserId
+	password
+	forget Question
+	forget Answer
+	member type
+	
+Cutomer Details
+	CUSTOMERID
+	First Name
+	Middle Name
+	Last Name
+	Mobile
+	Phone
+	email
+	alternate email
+	Address 1
+	Address 2
+	Area\Landmark
+	City
+	State
+	Pin Code
+	userid_fk
+	
+
+Property_Details
+	Primary Key
+	Type : Apartment / Commercial / Land / Service Apartment / Flatmate / Paying Guest	
+	Why  : Sale / Rent  
+	Description
+	More Description
+	Address 1
+	Address 2
+	Area\Landmark
+	City
+	State
+	Pin Code
+	CUSTOMERID
+
+Images(one to many property_details to pics)
+	Primary Key
+	Object Type
+	Object Id
+	Name of Image
+	Path of Image
+	
