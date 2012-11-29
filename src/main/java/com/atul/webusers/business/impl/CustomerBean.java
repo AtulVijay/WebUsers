@@ -1,19 +1,19 @@
 package com.atul.webusers.business.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.atul.webusers.business.api.ICustomer;
 import com.atul.webusers.dao.api.CustomerDetailsDAO;
 import com.atul.webusers.domain.CustomerDetails;
 
-@Repository("customerBean")
+@Service("customerBean")
 public class CustomerBean implements ICustomer {
 
 	CustomerDetailsDAO cusomerDetailsDAO;
 	
 	@Autowired
-	public void steCusomerDetailsDAO(CustomerDetailsDAO cusomerDetailsDAO){
+	public void setCusomerDetailsDAO(CustomerDetailsDAO cusomerDetailsDAO){
 		this.cusomerDetailsDAO=cusomerDetailsDAO;
 	}
 	

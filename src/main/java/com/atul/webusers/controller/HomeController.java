@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.atul.webusers.business.api.ICustomer;
+import com.atul.webusers.business.api.IPersonalBanking;
 import com.atul.webusers.dao.api.CustomerDetailsDAO;
 import com.atul.webusers.domain.Item;
 import com.atul.webusers.domain.Order;
@@ -30,9 +31,24 @@ public class HomeController {
 	@Autowired
 	@Qualifier("customerBean")
 	ICustomer customerBean;
+	
+	@Autowired
+	@Qualifier("bankAccount")
+	IPersonalBanking bankAccount;
 
-	/*@Autowired
-	public void steCustomerBean(ICustomer customerBean){
+	@Autowired
+	@Qualifier("creditCard")
+	IPersonalBanking creditCard;
+
+	
+	@Autowired
+	@Qualifier("debitCard")
+	IPersonalBanking debitCard;
+
+	
+	/*
+	@Autowired
+	public void setCustomerBean(ICustomer customerBean){
 		this.customerBean=customerBean;
 	}
 	*/
@@ -42,7 +58,11 @@ public class HomeController {
 	public String welcomePage(Locale locale, Model model) throws Exception{
 		logger.info("Wecome Atul Vijay!!! the client locale is "+ locale.toString());
 		
-		model.addAttribute("message", "Welcome Atul Vijay!! Finally You have done it." );
+		showAccountType(bankAccount);
+		showAccountType(creditCard);
+		showAccountType(debitCard);
+			
+		model.addAttribute("message", "Welcome Atul Vijay!! Finally You have done it.XXX" );
 		customerBean.addCustomer();
 		return "WelCome";
 	}
@@ -63,5 +83,8 @@ public class HomeController {
 		return "home";
 	}
 	
+	private void showAccountType(IPersonalBanking x){
+		x.showAccountType();
+	}
 	
 }
