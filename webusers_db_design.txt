@@ -38,6 +38,7 @@ Property_Details
 	Pin Code
 	CUSTOMERID
 
+Test :
 Images(one to many property_details to pics)
 	Primary Key
 	Object Type
