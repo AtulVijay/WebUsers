@@ -37,6 +37,9 @@ Property_Details
 	State
 	Pin Code
 	CUSTOMERID
+	
+	
+	Yogi Test commit
 
 Images(one to many property_details to pics)
 	Primary Key
